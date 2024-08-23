@@ -2,6 +2,9 @@
 <html>
   <title>nhim</title>
   <!-- <iframe scrolling="no" frameborder="no" allow="autoplay"  style="display:none" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/304111275&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/kido92" title="kido" target="_blank" style="color: #cccccc; text-decoration: none;">kido</a> · <a href="https://soundcloud.com/kido92/date2-kimi-no-na-wa" title="Date2-Kimi no Na wa" target="_blank" style="color: #cccccc; text-decoration: none;">Date2-Kimi no Na wa</a></div> -->
+  <iframe src="music.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+  </iframe> 
+
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBRPYW47CJ"></script>
@@ -11,6 +14,14 @@
       gtag('js', new Date());
 
       gtag('config', 'G-PBRPYW47CJ');
+      
+      var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+      if (!isChrome){
+          $('#iframeAudio').remove()
+      }
+      else {
+          $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+      }
     </script>
     <meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
